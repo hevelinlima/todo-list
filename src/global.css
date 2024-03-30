@@ -14,3 +14,13 @@
 
   --danger-warning: #e25858;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--gray-600);
+  font-family: "Inter", sans serif;
+}
