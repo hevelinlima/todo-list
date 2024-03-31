@@ -1,5 +1,5 @@
 import styles from './TaskBar.module.css'
-import plusSign from '../assets/plus-sign.svg'
+import { PlusCircle } from '@phosphor-icons/react';
 
 export function TaskBar(){
   return(
@@ -9,7 +9,7 @@ export function TaskBar(){
         <div>
           <button type="submit">
             Criar
-            <img src={ plusSign } alt="" />
+            <PlusCircle size={22} />
           </button>
         </div>
       </form>

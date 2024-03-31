@@ -1,9 +1,9 @@
 import styles from './TaskList.module.css'
-import clipboard from '../assets/clipboard.svg'
+import { Tasks } from './List/Tasks';
 
 export function TaskList(){
   return(
-    <article className={styles.tasks}>
+    <article className={styles.tasksArticle}>
       <header>
         <div className={styles.tasksHeader}>
           <h3>Tarefas criadas</h3>
@@ -14,12 +14,8 @@ export function TaskList(){
           <p>0</p>
         </div>
       </header>
-      <div className={styles.tasksGap} />
-      <div className={styles.tasksMain}>
-        <img src={ clipboard } alt="" />
-        <h4>Você ainda não tem tarefas cadastradas.</h4>
-        <p>Crie tarefas e organize seus itens a fazer</p>
-      </div>
+      <Tasks />
+      <Tasks />
     </article>
   );
 }
