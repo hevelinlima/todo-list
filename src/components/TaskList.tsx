@@ -1,7 +1,12 @@
 import styles from './TaskList.module.css'
 import { Tasks } from './List/Tasks';
+import { Empty } from './List/Empty';
 
-export function TaskList(){
+interface TaskListProps{
+  tasks: string[];
+}
+
+export function TaskList({tasks}: TaskListProps){
   return(
     <article className={styles.tasksArticle}>
       <header>
@@ -14,8 +19,15 @@ export function TaskList(){
           <p>0</p>
         </div>
       </header>
-      <Tasks />
-      <Tasks />
+      <div>
+        {tasks.length > 0 ? (
+          tasks.map(task => {
+            return <Tasks/>
+          })
+          ) : (
+          <Empty />
+          )}
+      </div>
     </article>
   );
 }
