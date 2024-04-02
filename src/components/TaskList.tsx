@@ -22,7 +22,10 @@ export function TaskList({tasks}: TaskListProps){
       <div>
         {tasks.length > 0 ? (
           tasks.map(task => {
-            return <Tasks/>
+            return (
+              <Tasks
+              content={task}/>
+              )
           })
           ) : (
           <Empty />
