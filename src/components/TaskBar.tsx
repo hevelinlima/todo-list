@@ -23,9 +23,9 @@ export function TaskBar({ onAddTask }: TaskBarProps){
 
   return(
     <div className={styles.taskbar}>
-      <form onClick={handleSubmitText} className={styles.taskbarForm} >
+      <form onSubmit={handleSubmitText} className={styles.taskbarForm} >
         <textarea 
-          value={taskText} id="" 
+          value={taskText} 
           onChange={taskChange}
           placeholder="Adicione uma nova tarefa">  
         </textarea>

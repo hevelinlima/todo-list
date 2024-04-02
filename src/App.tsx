@@ -13,11 +13,12 @@ export function App() {
     setTasks([...tasks, newTask]);
   }
 
+
   return(
     <div>
       <Header/>
       <TaskBar onAddTask={handleAddTask}/>
-      <TaskList tasks={tasks}/>
+      <TaskList tasks={tasks} setTasks={setTasks}/>
     </div>
   )
 }

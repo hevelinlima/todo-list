@@ -34,3 +34,7 @@
 .tasksHeader h3 span {
   color: var(--purple-light);
 }
+
+.tasksMain {
+  margin-bottom: 1.5rem;
+}

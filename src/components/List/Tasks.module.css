@@ -1,7 +1,7 @@
 .task {
   margin-top: 1.5rem;
   width: 47.375;
-  min-height: 4.5rem;
+  min-height: 3rem;
   height: auto;
 
   background-color: var(--gray-500);

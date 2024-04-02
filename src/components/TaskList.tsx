@@ -4,9 +4,18 @@ import { Empty } from './List/Empty';
 
 interface TaskListProps{
   tasks: string[];
+  setTasks: (task: string[]) => void;
 }
 
-export function TaskList({tasks}: TaskListProps){
+export function TaskList({tasks, setTasks}: TaskListProps){
+
+  function deleteTask(taskToDelete: string){
+    const tasksWithOutDeletedOne = tasks.filter(task =>{
+      return task !== taskToDelete
+    })
+    setTasks(tasksWithOutDeletedOne);
+  }
+
   return(
     <article className={styles.tasksArticle}>
       <header>
@@ -19,12 +28,13 @@ export function TaskList({tasks}: TaskListProps){
           <p>0</p>
         </div>
       </header>
-      <div>
+      <div className={styles.tasksMain}>
         {tasks.length > 0 ? (
           tasks.map(task => {
             return (
               <Tasks
-              content={task}/>
+              content={task}
+              onDeleteTask={deleteTask}/>
               )
           })
           ) : (
