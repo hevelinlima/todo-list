@@ -3,15 +3,15 @@ import { Tasks } from './List/Tasks';
 import { Empty } from './List/Empty';
 
 interface TaskListProps{
-  tasks: string[];
-  setTasks: (task: string[]) => void;
+  tasks: {id: string; content: string}[];
+  setTasks: (task: {id: string; content: string}[]) => void;
 }
 
 export function TaskList({tasks, setTasks}: TaskListProps){
 
   function deleteTask(taskToDelete: string){
     const tasksWithOutDeletedOne = tasks.filter(task =>{
-      return task !== taskToDelete
+      return task.id !== taskToDelete
     })
     setTasks(tasksWithOutDeletedOne);
   }
@@ -37,7 +37,9 @@ export function TaskList({tasks, setTasks}: TaskListProps){
           tasks.map(task => {
             return (
               <Tasks
-              content={task}
+              key={task.id}
+              id={task.id}
+              content={task.content}
               onDeleteTask={deleteTask}/>
               )
           })

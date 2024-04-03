@@ -4,16 +4,16 @@ import { Header } from './components/Header'
 import { TaskBar } from './components/TaskBar'
 import { TaskList } from './components/TaskList'
 
-
-
 export function App() {
-
-  const [tasks, setTasks] = useState<string[]>([]);
+  const [tasks, setTasks] = useState<{ id: string; content: string }[]>([]);
 
   function handleAddTask(newTask: string){
-    setTasks([...tasks, newTask]);
+    const newTaskWithID = {
+      id: new Date().getTime().toString(),
+      content: newTask,
+    };
+    setTasks([...tasks, newTaskWithID]);
   }
-
 
   return(
     <div>

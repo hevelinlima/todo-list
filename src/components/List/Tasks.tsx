@@ -2,14 +2,15 @@ import { Check, Trash } from "@phosphor-icons/react";
 import styles from './Tasks.module.css'
 
 interface TasksProps{
+  id: string;
   content: string;
-  onDeleteTask: (task: string) => void; 
+  onDeleteTask: (taskToDelete: string) => void; 
 }
 
-export function Tasks({content, onDeleteTask}: TasksProps){
+export function Tasks({id, content, onDeleteTask}: TasksProps){
 
   function handleDeleteTask(){
-    onDeleteTask(content)
+    onDeleteTask(id)
   }
 
   return(
