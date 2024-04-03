@@ -21,11 +21,15 @@ export function TaskList({tasks, setTasks}: TaskListProps){
       <header>
         <div className={styles.tasksHeader}>
           <h3>Tarefas criadas</h3>
-          <p>0</p>
+          <p>{tasks.length}</p>
         </div>
         <div className={styles.tasksHeader}> 
           <h3><span>Concluídas</span></h3>
-          <p>0</p>
+          {tasks.length == 0 ? (
+            <p>0</p>
+          ) : (
+            <p>0 de {tasks.length}</p>
+          )}
         </div>
       </header>
       <div className={styles.tasksMain}>

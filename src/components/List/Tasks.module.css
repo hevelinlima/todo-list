@@ -22,7 +22,18 @@
   padding: 1rem 0;
 }
 
-.container label {
+.container label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .taskText {

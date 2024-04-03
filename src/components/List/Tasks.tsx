@@ -16,8 +16,8 @@ export function Tasks({content, onDeleteTask}: TasksProps){
     <div className={styles.task}>
       <div className={styles.container}>
         <label htmlFor="checkbox">
-          <input readOnly type="checkbox" name="" id="" />
-          <span>
+          <input readOnly type="checkbox" />
+          <span className={styles.checkbox}>
             <Check />
           </span>
         </label>
