@@ -1,15 +1,17 @@
 import styles from './TaskList.module.css'
 import { Tasks } from './List/Tasks';
 import { Empty } from './List/Empty';
+import { ITask } from '../App';
 
 interface TaskListProps{
-  tasks: {id: string; content: string}[];
-  setTasks: (task: {id: string; content: string}[]) => void;
+  tasks: ITask[];
+  setTasks: (task: ITask[]) => void;
+  onToggleTask: ({ id, value }: { id: number; value: boolean }) => void;
 }
 
-export function TaskList({tasks, setTasks}: TaskListProps){
+export function TaskList({tasks, setTasks, onToggleTask}: TaskListProps){
 
-  function deleteTask(taskToDelete: string){
+  function deleteTask(taskToDelete: number){
     const tasksWithOutDeletedOne = tasks.filter(task =>{
       return task.id !== taskToDelete
     })
@@ -38,9 +40,9 @@ export function TaskList({tasks, setTasks}: TaskListProps){
             return (
               <Tasks
               key={task.id}
-              id={task.id}
-              content={task.content}
-              onDeleteTask={deleteTask}/>
+              data={task}
+              onDeleteTask={deleteTask}
+              onToggleTask={onToggleTask}/>
               )
           })
           ) : (

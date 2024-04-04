@@ -1,29 +1,42 @@
 import { Check, Trash } from "@phosphor-icons/react";
 import styles from './Tasks.module.css'
+import { ITask } from "../../App";
 
 interface TasksProps{
-  id: string;
-  content: string;
-  onDeleteTask: (taskToDelete: string) => void; 
+  data: ITask;
+  onDeleteTask: (taskToDelete: number) => void; 
+  onToggleTask: ({ id, value }: { id: number; value: boolean }) => void;
 }
 
-export function Tasks({id, content, onDeleteTask}: TasksProps){
+export function Tasks({data, onDeleteTask, onToggleTask}: TasksProps){
 
   function handleDeleteTask(){
-    onDeleteTask(id)
+    onDeleteTask(data.id)
   }
+
+  function handleToggleTask(){
+    onToggleTask({ id: data.id, value: !data.isChecked })
+  }
+
+  const checkedChexbox = data.isChecked 
+  ? styles['checked-chexbox']
+  : styles['unchecked-chexbox']
+
+  const checkedParagraph = data.isChecked 
+  ? styles['checked-taskText']
+  : ''
 
   return(
     <div className={styles.task}>
       <div className={styles.container}>
-        <label htmlFor="checkbox">
-          <input readOnly type="checkbox" />
-          <span className={styles.checkbox}>
-            <Check />
+        <label htmlFor="checkbox" onClick={handleToggleTask}>
+          <input readOnly type="checkbox" checked={data.isChecked}/>
+          <span className={`${styles.checkbox} ${checkedChexbox}`}>
+            {data.isChecked && <Check />}
           </span>
         </label>
-        <p className={styles.taskText}>
-          {content}
+        <p className={`${styles.taskText} ${checkedParagraph}`}>
+          {data.content}
         </p>
         <button onClick={handleDeleteTask} title="Deletar tarefa">
           <Trash size={16} />
