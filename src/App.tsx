@@ -4,17 +4,17 @@ import { Header } from './components/Header'
 import { TaskBar } from './components/TaskBar'
 import { TaskList } from './components/TaskList'
 
-export interface ITask{
+export interface Task{
   id: number;
   content: string;
   isChecked: boolean;
 }
 
 export function App() {
-  const [tasks, setTasks] = useState<ITask[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   function handleAddTask(newTask: string){
-    const newTaskWithID: ITask = {
+    const newTaskWithID: Task = {
       id: new Date().getTime(),
       content: newTask,
       isChecked: false

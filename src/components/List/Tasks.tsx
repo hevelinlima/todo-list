@@ -1,9 +1,9 @@
 import { Check, Trash } from "@phosphor-icons/react";
 import styles from './Tasks.module.css'
-import { ITask } from "../../App";
+import { Task } from "../../App";
 
 interface TasksProps{
-  data: ITask;
+  data: Task;
   onDeleteTask: (taskToDelete: number) => void; 
   onToggleTask: ({ id, value }: { id: number; value: boolean }) => void;
 }

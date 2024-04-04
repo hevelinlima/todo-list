@@ -1,11 +1,11 @@
 import styles from './TaskList.module.css'
 import { Tasks } from './List/Tasks';
 import { Empty } from './List/Empty';
-import { ITask } from '../App';
+import { Task } from '../App';
 
 interface TaskListProps{
-  tasks: ITask[];
-  setTasks: (task: ITask[]) => void;
+  tasks: Task[];
+  setTasks: (task: Task[]) => void;
   onToggleTask: ({ id, value }: { id: number; value: boolean }) => void;
 }
 
