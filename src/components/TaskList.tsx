@@ -18,6 +18,13 @@ export function TaskList({tasks, setTasks, onToggleTask}: TaskListProps){
     setTasks(tasksWithOutDeletedOne);
   }
 
+  const completedTasks = tasks.reduce((completedTasksCount, task) => {
+    if (task.isChecked) {
+      return completedTasksCount + 1
+    }
+    return completedTasksCount
+  }, 0)
+
   return(
     <article className={styles.tasksArticle}>
       <header>
@@ -30,7 +37,7 @@ export function TaskList({tasks, setTasks, onToggleTask}: TaskListProps){
           {tasks.length == 0 ? (
             <p>0</p>
           ) : (
-            <p>0 de {tasks.length}</p>
+            <p>{completedTasks} de {tasks.length}</p>
           )}
         </div>
       </header>
