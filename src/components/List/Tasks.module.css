@@ -37,10 +37,11 @@
 }
 
 .unchecked-chexbox {
-  border: 2px solid var(--blue-dark);
+  border: 2px solid var(--blue-light);
 }
 
 .unchecked-chexbox:hover {
+  border: 2px solid var(--blue-dark);
   background-color: var(--blue-light);
 }
 
@@ -50,6 +51,7 @@
 }
 
 .checked-chexbox:hover {
+  border: 2px solid var(--purple-light);
   background-color: var(--purple-light);
 }
 

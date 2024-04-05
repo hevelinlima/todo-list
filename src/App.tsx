@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.module.css'
+import styles from  './App.module.css'
 import { Header } from './components/Header'
 import { TaskBar } from './components/TaskBar'
 import { TaskList } from './components/TaskList'
@@ -36,14 +36,16 @@ export function App() {
   }
 
   return(
-    <div>
+    <div className={styles.container}>
       <Header/>
       <TaskBar onAddTask={handleAddTask}/>
-      <TaskList 
-        tasks={tasks} 
-        setTasks={setTasks}
-        onToggleTask={handleToggleTask}
-      />
+      <div className={styles.wrapper}>
+        <TaskList 
+          tasks={tasks} 
+          setTasks={setTasks}
+          onToggleTask={handleToggleTask}
+        />
+      </div>
     </div>
   )
 }
