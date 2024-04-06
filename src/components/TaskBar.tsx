@@ -31,8 +31,8 @@ export function TaskBar({ onAddTask }: TaskBarProps){
         </textarea>
         <div>
           <button type="submit">
-            Criar
-            <PlusCircle size={22} />
+            <p>Criar</p>
+            <span><PlusCircle size={22} /></span>
           </button>
         </div>
       </form>

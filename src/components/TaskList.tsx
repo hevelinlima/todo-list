@@ -33,7 +33,7 @@ export function TaskList({tasks, setTasks, onToggleTask}: TaskListProps){
           <p>{tasks.length}</p>
         </div>
         <div className={styles.tasksHeader}> 
-          <h3><span>Concluídas</span></h3>
+          <span>Concluídas</span>
           {tasks.length == 0 ? (
             <p>0</p>
           ) : (

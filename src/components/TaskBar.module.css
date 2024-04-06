@@ -5,6 +5,7 @@
 
   margin-top: -1.75rem;
   height: 3.5rem;
+  width: auto;
 }
 
 .taskbarForm {
@@ -65,4 +66,17 @@
 
 .taskbarForm button[type="submit"]:hover {
   background: var(--blue-light);
+}
+
+@media (max-width: 768px) {
+  .taskbar {
+    height: 4rem;
+  }
+  .taskbarForm textarea {
+    max-width: 40rem;
+    width: auto;
+  }
+  .taskbarForm button[type="submit"] > span {
+    display: none;
+  }
 }
