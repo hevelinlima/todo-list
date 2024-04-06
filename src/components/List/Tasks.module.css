@@ -16,7 +16,8 @@
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 1rem;
   gap: 1rem;
 
   padding: 1rem 0;
@@ -57,7 +58,7 @@
 
 .taskText {
   color: var(--gray-100);
-  width: 39.5rem;
+  max-width: 39rem;
 
   font-size: 0.88rem;
   overflow: hidden;
@@ -85,8 +86,6 @@
 
 @media (max-width: 768px) {
   .taskText {
-    width: 10rem;
-    overflow: hidden;
-    word-wrap: break-word;
+    max-width: 10rem;
   }
 }

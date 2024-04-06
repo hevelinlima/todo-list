@@ -1,5 +1,4 @@
 .tasksArticle {
-  max-width: 47.375rem;
   width: auto;
   margin-top: 4rem;
 
@@ -17,6 +16,7 @@
   display: flex;
   flex-direction: row;
   padding: 0 0.2rem;
+  width: auto;
 
   gap: 0.5rem;
 }

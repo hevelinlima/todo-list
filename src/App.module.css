@@ -4,21 +4,16 @@
 }
 
 .wrapper {
-  width: 47.375rem;
+  width: 736px;
   margin: 0.2rem auto;
-  padding: 0 1rem;
 }
 
 @media (max-width: 768px) {
-  html {
-    font-size: 87.5%;
-  }
   .container {
-    width: auto;
+    width: 100%;
   }
   .wrapper {
-    max-width: 47.375rem;
-    width: auto;
+    width: 90%;
     padding: 1rem;
   }
 }
