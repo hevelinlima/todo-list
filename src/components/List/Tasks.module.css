@@ -17,7 +17,6 @@
 .container {
   display: flex;
   justify-content: center;
-
   gap: 1rem;
 
   padding: 1rem 0;
@@ -86,8 +85,7 @@
 
 @media (max-width: 768px) {
   .taskText {
-    max-width: 12rem;
-    font-size: 1rem;
+    width: 10rem;
     overflow: hidden;
     word-wrap: break-word;
   }

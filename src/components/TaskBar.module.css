@@ -10,7 +10,6 @@
 
 .taskbarForm {
   height: 100%;
-
   display: flex;
   flex-direction: row;
 
@@ -75,6 +74,10 @@
   .taskbarForm textarea {
     max-width: 40rem;
     width: auto;
+    padding: 0.6rem 0 0 0.75rem;
+  }
+  .taskbarForm button[type="submit"] {
+    width: 4.5rem;
   }
   .taskbarForm button[type="submit"] > span {
     display: none;
