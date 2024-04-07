@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-  <img alt="Pré-vizualização do projeto ToDo-list" src="src/assets/preview1.jpg" width="70%">
+  <img alt="Pré-vizualização do projeto ToDo-list" src="src/assets/preview1.png" width="70%">
   
 </p>
 <p align="center">
