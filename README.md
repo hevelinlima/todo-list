@@ -3,7 +3,11 @@
 <br>
 
 <p align="center">
-  <img alt="Pré-vizualização do projeto ToDo-list" src="src/assets/preview1.png" width="100%">
+  <img alt="Pré-vizualização do projeto ToDo-list" src="src/assets/preview1.jpg" width="70%">
+  
+</p>
+<p align="center">
+  <em>Confira o resultado do app em: https://todo-list-hevelin.vercel.app/</em>
 </p>
 
 ## 💻 Projeto
@@ -32,4 +36,5 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - TypeScript
 - React
 - Git e Github
+- Vite
 - Figma
