@@ -1,6 +1,6 @@
 .task {
   margin-top: 1.5rem;
-  max-width: 47.375rem;
+  max-width: 46rem;
   width: auto;
   min-height: 3rem;
   height: auto;
@@ -15,12 +15,16 @@
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  align-items: flex-start;
   gap: 1rem;
 
-  padding: 1rem 0;
+  padding: 1rem;
+}
+
+.container label {
+  grid-column: 1/2;
 }
 
 .container label input[type="checkbox"] {
@@ -58,11 +62,14 @@
 
 .taskText {
   color: var(--gray-100);
-  max-width: 39rem;
+
+  width: auto;
 
   font-size: 0.88rem;
   overflow: hidden;
   word-wrap: break-word;
+
+  grid-column: 2/3;
 }
 
 .checked-taskText {
@@ -74,18 +81,14 @@
   background-color: transparent;
   color: var(--gray-300);
   border: 0;
+  border-radius: 4px;
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 4px;
+
+  grid-column: 3/4;
 }
 
 .container button:hover {
   color: var(--danger-warning);
   background-color: var(--gray-400);
-}
-
-@media (max-width: 768px) {
-  .taskText {
-    max-width: 10rem;
-  }
 }

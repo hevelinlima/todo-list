@@ -39,7 +39,7 @@ export function Tasks({data, onDeleteTask, onToggleTask}: TasksProps){
           {data.content}
         </p>
         <button onClick={handleDeleteTask} title="Deletar tarefa">
-          <Trash size={16} />
+          <Trash size={18} />
         </button>
       </div>
     </div>
