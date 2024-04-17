@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from  './App.module.css'
 import { Header } from './components/Header'
 import { TaskBar } from './components/TaskBar'
@@ -11,7 +11,16 @@ export interface Task{
 }
 
 export function App() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(()=>{
+    const storedTasks = localStorage.getItem('@todo-list:tasks-v1.0');
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
+
+  useEffect(() =>{
+    const stateJSON = JSON.stringify(tasks);
+    
+    localStorage.setItem('@todo-list:tasks-v1.0', stateJSON);
+  }, [tasks])
 
   function handleAddTask(newTask: string){
     const newTaskWithID: Task = {
